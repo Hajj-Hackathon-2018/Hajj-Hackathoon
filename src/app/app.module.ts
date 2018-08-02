@@ -3,16 +3,18 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
-
+import { Calendar } from '@ionic-native/calendar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { LogoPage } from '../pages/logo/logo'
+import { LogoPage } from '../pages/logo/logo';
+import { DayDetailsPage } from '../pages/day-details/day-details';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    LogoPage
+    LogoPage,
+    DayDetailsPage
   ],
   imports: [
     BrowserModule,
@@ -22,12 +24,14 @@ import { LogoPage } from '../pages/logo/logo'
   entryComponents: [
     MyApp,
     HomePage,
-    LogoPage
+    LogoPage,
+    DayDetailsPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    Calendar
   ]
 })
-export class AppModule {}
+export class AppModule { }

@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { App } from 'ionic-angular';
+
 
 /**
  * Generated class for the LogoPage page.
@@ -15,7 +17,9 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class LogoPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController,private app: App, public navParams: NavParams)
+   {
+  
   }
 
   ionViewDidLoad() {
