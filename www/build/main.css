@@ -25678,49 +25678,109 @@ ion-navbar.toolbar {
   min-height: calc(46px + env(safe-area-inset-bottom));
 }
 
-page-day-details .meter {
-  height: 20px;
-  /* Can be anything */
-  position: relative;
-  background: #555;
-  border-radius: 25px;
-  padding: 10px;
-  -webkit-box-shadow: inset 0 -1px 1px rgba(255, 255, 255, 0.3);
-  box-shadow: inset 0 -1px 1px rgba(255, 255, 255, 0.3);
+page-day-details .contentBackground {
+  background-color: #161823;
+}
+
+page-day-details .hour {
+  color: white;
+}
+
+page-day-details .temp {
+  color: white;
+}
+
+page-day-details .navBar {
+  background-color: #161823;
+}
+
+page-day-details .toolbar-title {
+  color: white;
+}
+
+page-day-details meter::-webkit-meter-optimum-value {
+  background: green;
+  /* Green */
+}
+
+page-day-details meter::-webkit-meter-suboptimum-value {
+  background: #E73F67;
+  /* Green */
+}
+
+page-day-details meter::-webkit-meter-even-less-good-value {
+  background: #30040e;
+  /* Green */
+}
+
+page-day-details ion-navbar {
+  background-color: #161823;
 }
 
 page-home [col-1] {
   -webkit-box-flex: 0;
-  -webkit-flex: 0 0 8.33333%;
-  -ms-flex: 0 0 8.33333%;
+  -webkit-flex: 0 0 10.33333%;
+  -ms-flex: 0 0 14.33333%;
   flex: 0 0 14.285714285714286%;
-  width: 14.285714285714286%;
-  max-width: 14.285714285714286%;
+  width: 90%;
+  max-width: 100%;
+}
+
+page-home .backGround {
+  background-color: #161824;
+}
+
+page-home .head {
+  position: center;
+}
+
+page-home .title {
+  color: #FFFFFF;
+  top: 0;
+  left: 0;
+  padding: 0 90px 1px;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background-color: #161824;
 }
 
 page-home .col {
   text-align: center;
   padding: 5px;
+  color: #FFFFFF;
 }
 
 page-home .last-month, page-home .next-month {
-  color: #999999;
-  font-size: 90%;
+  padding: 5px;
+  text-align: center;
+  color: #2b2e41;
 }
 
 page-home .currentDate, page-home .otherDate {
+  text-align: center;
   padding: 5px;
+  color: #FFFFFF;
+}
+
+page-home .otherDate {
+  backgr: #2b2e41;
 }
 
 page-home .currentDate {
+  text-align: center;
   font-weight: bold;
-  background-color: red;
-  color: white;
-  border-radius: 30px;
+  background-color: #29388f;
+  color: #161824;
+  border-radius: 20px;
 }
 
 page-home .calendar-header {
-  background-color: #1a732d;
+  background-color: #161824;
+  color: #FFFFFF;
+}
+
+page-home .ccurrentMonth {
   color: #FFFFFF;
 }
 
@@ -25728,14 +25788,14 @@ page-home .event-bullet {
   margin: 2px auto;
   height: 5px;
   width: 5px;
-  background-color: green;
+  background-color: #161824;
   border-radius: 30px;
 }
 
 page-home .selected-date {
   width: 20px;
   height: 2px;
-  background-color: blue;
+  background-color: #161824;
 }
 
 page-home .unselected-date {
@@ -25757,13 +25817,37 @@ page-home .calendar-body .calendar-weekday, page-home .calendar-body .calendar-d
 
 page-home .calendar-body .calendar-weekday {
   font-weight: bold;
-  border-bottom: solid 1px #1a732d;
-  background-color: #26ab56;
+  border-bottom: solid 1px #161824;
+  background-color: #161824;
+  color: #FFFFFF;
 }
 
 page-home .calendar-body .calendar-date {
-  border-top: solid 1px #1a732d;
-  border-bottom: solid 1px #1a732d;
+  border-top: solid 1px #161824;
+}
+
+page-home .calendar-body .dot1 {
+  height: 12px;
+  width: 12px;
+  background-color: #FF2167;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+page-home .calendar-body .dot2 {
+  height: 12px;
+  width: 12px;
+  background-color: #50B8B7;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+page-home .calendar-body .dot3 {
+  height: 12px;
+  width: 12px;
+  background-color: #F8CE17;
+  border-radius: 50%;
+  display: inline-block;
 }
 
 page-logo .no-scroll .scroll-content {

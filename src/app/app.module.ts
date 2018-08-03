@@ -8,6 +8,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { LogoPage } from '../pages/logo/logo';
 import { DayDetailsPage } from '../pages/day-details/day-details';
+import { GetRateProvider } from '../providers/get-rate/get-rate';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { DayDetailsPage } from '../pages/day-details/day-details';
     StatusBar,
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
-    Calendar
+    Calendar,
+    GetRateProvider
   ]
 })
 export class AppModule { }

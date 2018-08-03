@@ -1,44 +1,82 @@
 page-home {
   [col-1] {
     -webkit-box-flex: 0;
-    -webkit-flex: 0 0 8.33333%;
-    -ms-flex: 0 0 8.33333%;
+    -webkit-flex: 0 0 10.33333%;
+    -ms-flex: 0 0 14.33333%;
     flex: 0 0 14.285714285714286%;
-    width: 14.285714285714286%;
-    max-width: 14.285714285714286%;
+    width: 90%;
+    max-width: 100%;
   }
-  .col {
-    text-align: center;
-    padding: 5px;
+.calendar-weekday{
+  
+
   }
+  .backGround{
+    background-color: #161824;
+    
+  }
+  .head{
+    position: center;
+
+  }
+  .title{
+     color: #FFFFFF;
+     
+     top: 0;
+     left: 0;
+     padding: 0 90px 1px;
+     width: 100%;
+     height: 100%;
+     text-align: center;
+     background-color: #161824
+    
+   }
+   .col {
+     text-align: center;
+     padding: 5px;
+    color: #FFFFFF;
+    
+   }
   .last-month, .next-month {
-    color: #999999;
-    font-size: 90%;
+    padding: 5px;
+    text-align: center;
+    color: #2b2e41;
+    
   }
   .currentDate, .otherDate {
+    text-align: center;
     padding: 5px;
+    color:#FFFFFF;
+    
+  }
+  .otherDate {
+    backgr: #2b2e41;
   }
   .currentDate {
+    text-align: center;
     font-weight: bold;
-    background-color: red;
-    color: white;
-    border-radius: 30px;
+    background-color: #29388f;
+    color: #161824;
+    border-radius:20px;
   }
   .calendar-header {
-    background-color: #1a732d;
+    background-color: #161824;
     color: #FFFFFF;
   }
+  .ccurrentMonth{
+    
+    color: #FFFFFF}
   .event-bullet {
     margin: 2px auto;
     height: 5px;
     width: 5px;
-    background-color: green;
+    background-color: #161824;
     border-radius: 30px;
   }
   .selected-date {
     width: 20px;
     height: 2px;
-    background-color: blue;
+    background-color: #161824;
   }
   .unselected-date {
     border: none;
@@ -52,16 +90,41 @@ page-home {
     }
     .calendar-weekday, .calendar-date {
       text-align: center;
+
       margin: 0;
     }
     .calendar-weekday {
       font-weight: bold;
-      border-bottom: solid 1px #1a732d;
-      background-color: #26ab56;
+      border-bottom: solid 1px #161824;
+      background-color: #161824;
+      color: #FFFFFF
     }
     .calendar-date {
-      border-top: solid 1px #1a732d;
-      border-bottom: solid 1px #1a732d;
+      border-top: solid 1px #161824;
+      
+      
     }
+    .dot1{
+      height: 12px;
+      width: 12px;
+      background-color: #FF2167;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .dot2{
+      height: 12px;
+      width: 12px;
+      background-color:#50B8B7;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .dot3{
+      height: 12px;
+      width: 12px;
+      background-color:#F8CE17;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    
   }
 }
