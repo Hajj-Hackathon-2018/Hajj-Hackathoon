@@ -4,6 +4,7 @@ import { NavController, AlertController } from 'ionic-angular';
 import { Calendar } from '@ionic-native/calendar';
 import { DayDetailsPage } from '../day-details/day-details';
 
+import { GetRateProvider } from '../../providers/get-rate/get-rate'
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -21,8 +22,10 @@ export class HomePage {
   eventList: any;
   selectedEvent: any;
   isSelected: any;
+  monthRate=[]
 
-  constructor(private alertCtrl: AlertController,
+  constructor(private myservice:GetRateProvider,
+    private alertCtrl: AlertController,
     public navCtrl: NavController,
     private calendar: Calendar) { }
 
@@ -30,7 +33,13 @@ export class HomePage {
     this.date = new Date();
     this.monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     this.getDaysOfMonth();
+    this.daysInThisMonth.forEach(i => {
+      this.monthRate.push(this.dayAve(i,this.date.getMonth(),this.currentYear))
+      console.log("t", this.date.getMonth()-1)
+      
+    });
     this.loadEventThisMonth();
+
   }
 
   getDaysOfMonth() {
@@ -39,11 +48,9 @@ export class HomePage {
     this.daysInNextMonth = new Array();
     this.currentMonth = this.monthNames[this.date.getMonth()];
     this.currentYear = this.date.getFullYear();
-    if (this.date.getMonth() === new Date().getMonth()) {
+   
       this.currentDate = new Date().getDate();
-    } else {
-      this.currentDate = 999;
-    }
+   
 
     var firstDayThisMonth = new Date(this.date.getFullYear(), this.date.getMonth(), 1).getDay();
     var prevNumOfDays = new Date(this.date.getFullYear(), this.date.getMonth(), 0).getDate();
@@ -127,7 +134,7 @@ export class HomePage {
       "day": day,
       "month": this.currentMonth,
       "year": this.currentYear,
-      "hourDate":{}
+      "hourDate": {}
     }
     this.navCtrl.push(DayDetailsPage, inputToDayDetailsPage);
 
@@ -166,6 +173,31 @@ export class HomePage {
       ]
     });
     alert.present();
+  }
+  dayAve(day, month, year) {
+    let ar = this.myservice.dataByMonth(month, year)
+    let sum = 0
+    let count = 0
+    let total = 0
+    ar.forEach(i => {
+
+
+      if (new Date(i.date).getUTCDate() == day) {
+        //onsole.log('day = ', day, ' is ', i.date)
+        sum += i.flow_rate
+        count++
+      }
+
+    })
+    if (count != 0) {
+      total = sum / count
+
+    }
+    console.log(total)
+    return total
+
+
+
   }
 
 }

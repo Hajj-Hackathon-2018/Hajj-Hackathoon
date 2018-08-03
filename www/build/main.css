@@ -25853,23 +25853,3 @@ page-home .calendar-body .dot3 {
 page-logo .no-scroll .scroll-content {
   overflow: hidden;
 }
-
-page-logo .LogoBackGround {
-  background: url(../assets/imgs/background.jpg) no-repeat center center fixed;
-  background-size: cover;
-}
-
-page-logo .L1 {
-  background: url(../assets/imgs/l1.png) no-repeat center center fixed;
-  background-size: cover;
-}
-
-page-logo .L2 {
-  background: url(../assets/imgs/l2.png) no-repeat center center fixed;
-  background-size: cover;
-}
-
-page-logo .img {
-  margin: 5px;
-  float: left;
-}

@@ -1,9 +1,9 @@
 <ion-header class="head" padding>
-  
-  <h1 class="title" padding>Tawaf</h1>
-  
 
-  
+  <h1 class="title" padding>Tawaf</h1>
+
+
+
 </ion-header>
 
 <ion-content padding class="backGround">
@@ -33,11 +33,17 @@
       <ion-row class="calendar-date">
         <ion-col col-1 *ngFor="let lastDay of daysInLastMonth" class="last-month" (click)="goToLastMonth()">{{lastDay}}</ion-col>
         <ion-col col-1 *ngFor="let day of daysInThisMonth" (click)="selectDate(day)">
-          <span (click)="dayDetails(day)" class="currentDate" *ngIf="currentDate === day; else otherDate">
+          <span style="color:blue" (click)="dayDetails(day)" class="currentDate" *ngIf="currentDate === day; else otherDate">
             {{day}}
           </span>
           <ng-template #otherDate class="otherDate">
-            <div (click)="dayDetails(day)">
+            <div *ngIf="monthRate[day-1]<41" style="color:#F2CE4A" (click)="dayDetails(day)">
+              {{day}}
+            </div>
+            <div *ngIf="monthRate[day-1]>=41&&monthRate[day-1]<45" style="color:rgb(255, 0, 98)" (click)="dayDetails(day)">
+              {{day}}
+            </div>
+            <div *ngIf="monthRate[day-1]>=45" style="color:rgb(81, 110, 143)" (click)="dayDetails(day)">
               {{day}}
             </div>
 
@@ -49,31 +55,32 @@
       </ion-row>
     </ion-grid>
 
-    <div padding> 
-        <ion-grid>
-            <ion-row>
-              <ion-col>
-                  <span class="dot1"> </span>
-              </ion-col>
-              <ion-col>
-                  <span class="dot2"></span>
-              </ion-col>
-              <ion-col>
-                  <span class="dot3"></span>
-              </ion-col>
-            </ion-row>
-            <ion-row>
-              <ion-col>
-                crowded
-              </ion-col>
-              <ion-col>
-                uncrowded
-              </ion-col>
-              <ion-col>
-                medium crowd
-              </ion-col>
-            </ion-row>
-          </ion-grid>
+    <div padding>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <span class="dot1"> </span>
+          </ion-col>
+          <ion-col>
+            <span class="dot2"></span>
+          </ion-col>
+          <ion-col>
+            <span class="dot3"></span>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            crowded
+          </ion-col>
+          <ion-col>
+            uncrowded
+          </ion-col>
+          <ion-col>
+            medium crowd
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
       <!-- <ion-row padding>
          <ion-col col-4 > 
             <span class="dot1"> </span>
@@ -101,7 +108,7 @@
           
           
           </ion-row>  -->
-     
+
     </div>
   </div>
   <div class="selected-event" *ngIf="isSelected">

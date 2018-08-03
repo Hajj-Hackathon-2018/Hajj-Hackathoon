@@ -79,7 +79,7 @@ export class DayDetailsPage {
 
 
       if (new Date(i.date).getUTCDate() == day) {
-        console.log('day = ',day,' is ',i.date)
+        console.log('day = ', day, ' is ', i.date)
         sum += i.flow_rate
         count++
       }
